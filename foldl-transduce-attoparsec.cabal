@@ -1,0 +1,30 @@
+Name: foldl-transduce-attoparsec
+Version: 0.1.0.0
+Cabal-Version: >=1.8.0.2
+Build-Type: Simple
+License: BSD3
+License-File: LICENSE
+Copyright: 2015 Daniel Diaz
+Author: Daniel Diaz
+Maintainer: diaz_carrete@yahoo.com
+Bug-Reports: https://github.com/danidiaz/foldl-transduce-attoparsec/issues
+Synopsis: Attoparsec and foldl-transduce integration.
+Description: Attoparsec and foldl-transduce integration.
+Category: Control
+
+Extra-Source-Files:
+    README.md
+    CHANGELOG
+
+Source-Repository head
+    Type: git
+    Location: git@github.com:danidiaz/foldl-transduce-attoparsec.git
+
+Library
+    HS-Source-Dirs: src
+    Build-Depends:
+        foldl-transduce == 0.4.*,
+        attoparsec == 0.13.*
+    Exposed-Modules:
+        Control.Foldl.Transduce.Attoparsec
+    GHC-Options: -O2 -Wall

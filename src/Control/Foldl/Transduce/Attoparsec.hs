@@ -13,6 +13,10 @@ import Data.Attoparsec.Types
 import Data.Attoparsec.ByteString
 import Data.Attoparsec.Text
 
+-- From the attoparsec docs:
+-- http://hackage.haskell.org/package/attoparsec-0.13.0.1/docs/Data-Attoparsec-Text.html
+-- "To indicate that you have no more input, supply the Partial continuation with an empty Text."
+
 class (Eq a,MF.StableFactorialMonoid a) => ParserInput a where
     _parse :: Data.Attoparsec.Types.Parser a b -> a -> IResult a b
 

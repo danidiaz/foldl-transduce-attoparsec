@@ -10,6 +10,7 @@ import qualified Data.Text as T
 import Data.Attoparsec.Types
 import Data.Attoparsec.ByteString
 import Data.Attoparsec.Text
+import Data.Monoid
 import qualified Data.Monoid.Null as MN
 import qualified Data.Monoid.Factorial as MF
 import Control.Monad.Trans.Except

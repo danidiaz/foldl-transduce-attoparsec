@@ -21,6 +21,7 @@ import Control.Foldl.Transduce
 
 >>> import qualified Control.Foldl as L
 >>> import qualified Data.Text as T
+>>> import Data.Functor
 >>> import Control.Foldl.Transduce
 >>> import Control.Foldl.Transduce.Attoparsec
 >>> import qualified Data.Attoparsec.Text as A
@@ -38,7 +39,7 @@ data StripState a b
     The parsed value becomes the return value of the 'TransducerM'.
 
 
->>> runExcept $ L.foldM (transduceM (stripParse (many (A.char 'a'))) (L.generalize L.mconcat)) (map T.pack ["aa","aa","bb"])
+>>> runExcept $ L.foldM (transduceM (void (stripParse (many (A.char 'a')))) (L.generalize L.mconcat)) (map T.pack ["aa","bb"])
 Right "bb"
 
 >>> runExcept $ L.foldM (transduceM' (stripParse (many (A.char 'a'))) (L.generalize L.mconcat)) (map T.pack ["aa","aa","bb"])
